@@ -76,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 444
+    "width": 200
   },
   "right": {
     "id": "d6938936a78ad6d2",
@@ -181,7 +181,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "af98f95e208e0c21",
+  "active": "dae4f0da7e94de42",
   "lastOpenFiles": [
     "Untitled.canvas",
     "Excalidraw/Drawing 2026-05-12 01.15.14.excalidraw.md",
