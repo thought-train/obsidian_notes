@@ -11,5 +11,5 @@
 		1)  PartitionKey = feed_type (story or post), so all posts will be stored in the same server and all stories in another.
 		2) RowKey = post/story uuid
 		3) other fields check in the pipeline doc.
-	6) 
-		
+5)  Now, we make Python function workers which acts as Triggers for the Azure functions, like background jobs in Azure functions. For this we need requirements.txt and host.json 
+	
