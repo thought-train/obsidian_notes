@@ -6,4 +6,4 @@
 	1) flux.go returns 2 kinds of image aspect ratios: 4:5 for posts and 9:16 for stories. this implements the same functionality as the curl request and flux_generate.py
 	2)  gpt.go does 2 tasks: initial prompt gen and final caption gen. this receives the response as json and converts it into typed structs in go
 	3) sora.go takes in an existign image and makes an mp4 out of it. TODO: update endpoint url
-	4) 
+	4) blob.go handles uploading of images and videos to blob storage, and gen and storing sas links
