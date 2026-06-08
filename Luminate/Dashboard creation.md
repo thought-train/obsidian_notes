@@ -11,5 +11,22 @@
 		1)  PartitionKey = feed_type (story or post), so all posts will be stored in the same server and all stories in another.
 		2) RowKey = post/story uuid
 		3) other fields check in the pipeline doc.
-5)  Now, we make Python function workers which acts as Triggers for the Azure functions, like background jobs in Azure functions. For this we need requirements.txt and host.json 
-	
+5)  Now, we make Python function workers which acts as Triggers for the Azure functions, like background jobs in Azure functions. For this we need requirements.txt and host.json
+6) ```
+     Every Mon/Wed/Fri 6am UTC                                                                 
+    generation_trigger fires                                                                
+      → generate.py: GPT picks content type + writes FLUX prompt                            
+      → FLUX.2-pro draws the image (PNG bytes)                                              
+      → image saved to Blob Storage: raw-images/{session}/{uuid}.png                        
+      → queue message dropped: "new image ready, here's the blob name + prompt"             
+  Immediately after (queue trigger fires per message)                                       
+    caption_trigger fires                                                                   
+      → caption.py: GPT reads the FLUX prompt → writes caption + 25 hashtags                
+      → Table Storage: new row PartitionKey="feed"|"story", status="pending"        
+  Every 6 hours                                                                             
+    posting_trigger fires                                                                   
+      → post.py: queries Table Storage for status="approved"                                
+      → generates a 15-min SAS URL for the image blob                                       
+      → calls Instagram API: create container → publish                                     
+      → updates Table Storage: status="posted", saves instagram_post_id            
+	```
