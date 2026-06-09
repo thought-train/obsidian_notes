@@ -28,3 +28,35 @@
       → calls Instagram API: create container → publish                                     
       → updates Table Storage: status="posted", saves instagram_post_id            
 	```
+
+## azure infra creation
+#### storage account
+- we need to create a storage account(*luminatestorage5264*) for our resource group first so that we have a place to store images, reels, stories, captions, prompts, status of each photo, reasons and everything else.
+- first, i went to my resource group, `rg-team-lum-corp-5264-resource`, clicked create, then storage account(which has blob, table and queue), then name, resource group and *locally-redundant storage* and created.
+- now we create each container in this :
+	- Blob :
+		- `post-images` container for all 4:3 images
+		- `story-images` container for all 16:9 images
+		- `reels` container for all video posts and reels
+		- `reference-images` container to maintain consistency across all images(TODO this can be tied into FLUX.2 pro model as that image model can accept multiple image inputs to be used as input, should look into whether sora-2 can do that)
+	- Table:
+		- `posts` container to store the table metadata with PartitionKey as type of content and RowKey as status
+	- Queues:
+		- `caption-jobs` container so that it can generate captions after ssing an image has been created and notification has been sent to this queue, from which the caption worker can read.
+#### container registry
+- we need this as azure needs a place to pull opur go dashboard image from and deploy it in container apps.
+- while creating, i kept the plan as basic as opposed to standard due to cost($5 vs $20/mo) and that i don't need other customers  as users of this registry and one admin user would suffice for it to only be deployed to the container apps service of azure.
+- further, go to settings->access keys and enable admin user and copy the password somewhere safe.
+- now, i ned to push my own docker container to the registry with docker build -t and docker push. I logged in with docker login godashboardcr.azurecr.io, built with tag godashboardcr.azurecr.io/godashboard:latest, and pushed it. 
+### log analytics workspace
+- another prerequisite to going the container apps route is yopu need to have log analytics workspace to create it, where it can dump the container's logs.
+- for this, i went to the resource gropup, created a log analytics workspace, and can choose this whiole creating the container app .(previously we needed to note down the *workspace id* and *primary key* to be used in the container apps registration process, at my time in providence)
+#### container app
+- now, i went to create container app, specified name `godashboard`, also made a godashboard env as it is the cluster in which this docker container will run, and finally selected ingress as external, http and port as 8080.
+- I also need to add my env variables in this like:
+	- AZURE_API_KEY
+	- FLUX_ENDPOINT
+	- GPT_ENDPOINT
+	- SORA_ENDPOINT
+	- AZURE_STORAGE_CONNECTION_STRING(which you get form the storage account we created previously)
+	- 

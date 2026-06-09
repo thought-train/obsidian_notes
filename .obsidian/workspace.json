@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "03acdc27aeec6fdb",
+        "id": "24de069188029684",
         "type": "tabs",
         "children": [
           {
-            "id": "af98f95e208e0c21",
+            "id": "b67e4822affa0963",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Dashboard creation"
             }
+          },
+          {
+            "id": "f3be5b26b0efad0d",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Luminate/Table Schema.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Table Schema"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -41,7 +54,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -168,8 +181,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
@@ -193,25 +206,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "af98f95e208e0c21",
+  "active": "f3be5b26b0efad0d",
   "lastOpenFiles": [
-    "Luminate/Pipeline.md",
     "Luminate/Dashboard creation.md",
+    "Luminate/Table Schema.md",
+    "Luminate/Azure infra.md",
     "Random Commands.md",
-    "Linux.md",
     "Luminate/Untitled.canvas",
-    "Luminate",
-    "Excalidraw/Linux.excalidraw.md",
-    "Excalidraw",
-    "conflict-files-obsidian-git.md",
+    "Luminate/Pipeline.md",
     "Untitled.md",
-    "Untitled.canvas",
+    "Linux.md",
+    "Luminate",
+    "Untitled.base",
+    "Excalidraw",
     "Blog.md",
     "Ink/Writing/2026.5.12 - 1.11am.writing",
     "Ink/Writing",
     "Ink",
     "Excalidraw/Drawing 2026-05-12 01.07.57.excalidraw.md",
-    "Untitled.base",
     "Excalidraw/Drawing 2026-05-12 01.06.44.excalidraw.md",
     "Untitled 1.canvas",
     "2026-05-12.md",

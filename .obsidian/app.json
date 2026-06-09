@@ -1,3 +1,7 @@
 {
-  "promptDelete": false
+  "promptDelete": false,
+  "showLineNumber": false,
+  "spellcheck": false,
+  "showIndentGuide": false,
+  "readableLineLength": false
 }
