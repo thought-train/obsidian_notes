@@ -20,6 +20,19 @@
               "icon": "lucide-file",
               "title": "Dashboard creation"
             }
+<<<<<<< HEAD
+=======
+          },
+          {
+            "id": "f3be5b26b0efad0d",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+>>>>>>> ce677b1 (vault backup: 2026-06-11 00:52:03)
           }
         ]
       }
@@ -195,11 +208,21 @@
   },
   "active": "af98f95e208e0c21",
   "lastOpenFiles": [
+<<<<<<< HEAD
     "Luminate/Table Schema.md",
     "Luminate/Azure infra.md",
     "Luminate/Pipeline.md",
     "Luminate/Dashboard creation.md",
     "Random Commands.md",
+=======
+    "Luminate/Pipeline.md",
+    "Luminate/Dashboard creation.md",
+    "Luminate/Table Schema.md",
+    "Luminate/Azure infra.md",
+    "Random Commands.md",
+    "Luminate/Untitled.canvas",
+    "Untitled.md",
+>>>>>>> ce677b1 (vault backup: 2026-06-11 00:52:03)
     "Linux.md",
     "Luminate/Untitled.canvas",
     "Luminate",
